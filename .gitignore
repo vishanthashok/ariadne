@@ -1,0 +1,51 @@
+# Data (large / regenerable)
+data/raw/
+data/processed/
+data/faiss_index/
+!data/scripts/
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/faiss_index/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+*.pt
+*.pth
+*.onnx
+*.faiss
+model/checkpoints/*.pt
+!model/checkpoints/.gitkeep
+
+# Node / Next.js
+node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env.local
+frontend/node_modules/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Coverage / test
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Docker
+*.log

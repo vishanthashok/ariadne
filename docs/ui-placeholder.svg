@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06060a"/>
+      <stop offset="100%" stop-color="#0f1a2e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="640" fill="url(#bg)"/>
+  <rect x="24" y="24" width="1152" height="48" rx="4" fill="#0f1117" stroke="#1e2130"/>
+  <text x="48" y="54" fill="#e4e4e7" font-family="Inter, Arial" font-size="18" font-weight="600">ARIADNE</text>
+  <text x="140" y="54" fill="#71717a" font-family="Inter, Arial" font-size="12">GPS-DENIED VISUAL NAVIGATION</text>
+  <rect x="24" y="88" width="280" height="528" rx="4" fill="#0f1117" stroke="#1e2130"/>
+  <rect x="320" y="88" width="560" height="528" rx="4" fill="#0a1220" stroke="#1e2130"/>
+  <rect x="896" y="88" width="280" height="528" rx="4" fill="#0f1117" stroke="#1e2130"/>
+  <path d="M360 480 C420 400, 520 420, 580 360 S720 280, 820 300" fill="none" stroke="#3b82f6" stroke-width="3"/>
+  <path d="M360 500 C430 420, 530 440, 590 380 S730 300, 820 320" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 4" opacity="0.8"/>
+  <circle cx="820" cy="300" r="12" fill="#60a5fa" opacity="0.35"/>
+  <circle cx="820" cy="300" r="5" fill="#3b82f6"/>
+  <text x="40" y="120" fill="#71717a" font-family="Inter, Arial" font-size="11">DRONE CAMERA</text>
+  <text x="912" y="120" fill="#71717a" font-family="Inter, Arial" font-size="11">TELEMETRY</text>
+  <text x="340" y="580" fill="#22c55e" font-family="JetBrains Mono, monospace" font-size="16">ERROR: 127m</text>
+  <text x="520" y="580" fill="#71717a" font-family="JetBrains Mono, monospace" font-size="12">VISUAL-INERTIAL</text>
+  <rect x="40" y="140" width="248" height="220" fill="#161922"/>
+  <text x="48" y="400" fill="#ef4444" font-family="JetBrains Mono, monospace" font-size="11">GPS DENIED</text>
+</svg>
