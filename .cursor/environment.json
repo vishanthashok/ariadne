@@ -1,0 +1,20 @@
+{
+  "name": "ARIADNE",
+  "install": "./.cursor/install.sh",
+  "terminals": [
+    {
+      "name": "api",
+      "command": "source .venv/bin/activate && python -m uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload",
+      "description": "FastAPI backend + WebSocket simulation stream on http://localhost:8000"
+    },
+    {
+      "name": "frontend",
+      "command": "cd frontend && npm run dev",
+      "description": "Next.js mission console on http://localhost:3000"
+    }
+  ],
+  "ports": [
+    { "name": "frontend", "port": 3000 },
+    { "name": "api", "port": 8000 }
+  ]
+}
