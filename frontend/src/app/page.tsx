@@ -14,7 +14,7 @@ export default function HomePage() {
   const [tab, setTab] = useState<MobileTab>("map");
 
   return (
-    <div className="grid h-screen grid-cols-1 grid-rows-[56px_1fr_48px] lg:grid-cols-[320px_1fr_360px] lg:grid-rows-[56px_minmax(0,1fr)]">
+    <div className="grid h-screen grid-cols-1 grid-rows-[56px_1fr_48px] lg:grid-cols-[340px_1fr_380px] lg:grid-rows-[56px_minmax(0,1fr)]">
       <ControlBar
         playing={sim.playing}
         speed={sim.speed}

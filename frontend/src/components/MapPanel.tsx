@@ -259,9 +259,32 @@ export function MapPanel({ frame, history, isJammed }: Props) {
         </div>
       )}
 
+      <div className="pointer-events-none absolute left-3 top-3 z-10 flex items-center gap-2 border border-border bg-surface/85 px-2.5 py-1 backdrop-blur-md">
+        <span className="status-dot bg-estimated" />
+        <span className="panel-title">Tactical Map · Donetsk Oblast</span>
+        <span className="ml-2 font-mono text-[9px] tracking-widest text-text-muted">
+          WGS-84 · EPSG:4326
+        </span>
+      </div>
+
+      <div className="pointer-events-none absolute right-3 top-3 z-10 flex flex-col gap-1 border border-border bg-surface/85 px-2.5 py-1.5 font-mono text-[10px] backdrop-blur-md">
+        <div className="flex items-center gap-2">
+          <span className="h-0.5 w-4 bg-estimated" />
+          <span className="text-text-secondary">EST · VISUAL-INERTIAL</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="h-0.5 w-4 border-t border-dashed border-truth" />
+          <span className="text-text-secondary">TRUTH · GROUND</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="h-2 w-4 border border-estimated/50 bg-estimated/10" />
+          <span className="text-text-secondary">CONFIDENCE ELLIPSE</span>
+        </div>
+      </div>
+
       <button
         type="button"
-        className="absolute bottom-16 right-3 z-10 flex h-9 w-9 items-center justify-center rounded border border-border bg-surface/90 text-text-primary backdrop-blur-md"
+        className="absolute bottom-16 right-3 z-10 flex h-9 w-9 items-center justify-center border border-border bg-surface/90 text-text-primary backdrop-blur-md hover:border-estimated"
         onClick={() => {
           followRef.current = true;
           if (frame && mapRef.current) {
@@ -279,15 +302,39 @@ export function MapPanel({ frame, history, isJammed }: Props) {
         <Crosshair className="h-4 w-4" />
       </button>
 
-      <div className="absolute bottom-3 left-3 right-3 z-10 flex items-center justify-between rounded border border-border bg-surface/80 px-4 py-2 backdrop-blur-md">
-        <div className={`font-mono text-lg ${errColor}`}>
-          ERROR: {Math.round(err)}m
+      <div className="absolute bottom-3 left-3 right-3 z-10 grid grid-cols-4 items-center gap-4 border border-border bg-surface/85 px-4 py-2 backdrop-blur-md">
+        <div>
+          <div className="font-mono text-[9px] uppercase tracking-widest text-text-secondary">
+            Position Error
+          </div>
+          <div className={`font-mono text-lg font-semibold leading-tight ${errColor}`}>
+            {Math.round(err)}<span className="text-xs text-text-muted"> M</span>
+          </div>
         </div>
-        <div className="font-mono text-xs uppercase text-text-secondary">
-          {frame?.mode ?? "VISUAL-INERTIAL"}
+        <div>
+          <div className="font-mono text-[9px] uppercase tracking-widest text-text-secondary">
+            Mode
+          </div>
+          <div className="font-mono text-sm text-text-primary">
+            {frame?.mode ?? "VISUAL-INERTIAL"}
+          </div>
         </div>
-        <div className="font-mono text-xs text-text-secondary">
-          T+{(frame?.timestamp ?? 0).toFixed(1)}s
+        <div>
+          <div className="font-mono text-[9px] uppercase tracking-widest text-text-secondary">
+            Runtime
+          </div>
+          <div className="font-mono text-sm text-text-primary">
+            T+{(frame?.timestamp ?? 0).toFixed(1)}S
+          </div>
+        </div>
+        <div className="text-right">
+          <div className="font-mono text-[9px] uppercase tracking-widest text-text-secondary">
+            Status
+          </div>
+          <div className="font-mono text-sm text-confident">
+            <span className="status-dot bg-confident" />
+            TRACKING
+          </div>
         </div>
       </div>
     </section>

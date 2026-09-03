@@ -14,9 +14,9 @@ ARIADNE is a visual-inertial navigation system that enables autonomous drones to
 
 > Named after Ariadne, who gave Theseus a thread to navigate the labyrinth when no map existed. This system gives a drone a *thread* — visual terrain matching — when GPS is jammed.
 
-![ARIADNE mission console](docs/ui-placeholder.svg)
+![ARIADNE mission console](docs/mission-console.png)
 
-*Mission console: drone feed, satellite matches, fused trajectory, and telemetry (open the app in demo mode to see it live).*
+*Mission console (demo mode): drone feed with reticle overlay and reference matches, tactical map with confidence ellipse and jamming zone, and a navigation telemetry rail with EKF fusion weights and position error against IMU-only drift.*
 
 ---
 
